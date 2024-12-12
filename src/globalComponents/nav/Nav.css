@@ -1,0 +1,17 @@
+@import url("../../assets/theme.css");
+ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 1rem;
+  margin: 0;
+}
+
+li a {
+  color: var(--primary-text-color);
+}
+
+nav {
+  border-bottom: 1px solid var(--primary-border-color);
+}
