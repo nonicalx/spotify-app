@@ -17,9 +17,9 @@ export default function Nav() {
   return (
     <nav>
       <ul>
-        {PATHS.map(({ url, name }) => {
+        {PATHS.map(({ url, name }, index) => {
           return (
-            <li>
+            <li key={`${url}${index}`}>
               <Link to={url}>{name}</Link>
             </li>
           );
