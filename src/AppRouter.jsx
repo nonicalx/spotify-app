@@ -13,7 +13,7 @@ export default function AppRouter() {
           <Route path="/top-artists" element={<Pages.TopArtists />} />
           <Route path="/top-albums" element={<Pages.TopAlbums />} />
           <Route path="/my-playlists" element={<Pages.MyPlaylists />} />
-          <Route path="*" element={<h2>404</h2>} />
+          <Route path="*" element={<Pages.NotFound />} />
         </Routes>
       </div>
     </BrowserRouter>

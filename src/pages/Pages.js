@@ -6,5 +6,6 @@ import TopAlbums from "./topAlbums/TopAlbums";
 import TopArtists from "./topArtists/TopArtists";
 import TopSongs from "./topSongs/TopSongs";
 import MyPlaylists from "./myPlaylists/MyPlaylists";
+import NotFound from "./notFound/NotFound";
 
-export default { Auth, TopAlbums, TopArtists, TopSongs, MyPlaylists };
+export default { Auth, TopAlbums, TopArtists, TopSongs, MyPlaylists, NotFound };
