@@ -9,7 +9,7 @@ export default function Nav() {
   const location = useLocation();
 
   useEffect(() => {
-    if (!isAuthenticated() || location.pathname === "/") {
+    if (!isAuthenticated()) {
       navigate("/auth");
     }
   }, [location.pathname]);
