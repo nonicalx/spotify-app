@@ -6,5 +6,10 @@ export default function Auth() {
     e.preventDefault();
     authorize();
   };
-  return <div>Auth</div>;
+  return (
+    <div>
+      <p>Click button to Authorize Spotify</p>
+      <button onClick={handleAuthorization}>Authorize</button>
+    </div>
+  );
 }
