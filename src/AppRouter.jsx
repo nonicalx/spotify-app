@@ -8,6 +8,7 @@ export default function AppRouter() {
       <div>
         <Nav />
         <Routes>
+          <Route path="/" element={<Pages.TopSongs />} />
           <Route path="/auth" element={<Pages.Auth />} />
           <Route path="/top-songs" element={<Pages.TopSongs />} />
           <Route path="/top-artists" element={<Pages.TopArtists />} />
