@@ -22,7 +22,20 @@ export const getAccessToken = async (code) => {
   const request = new Request(TOKEN_URL, {
     method: "POST",
     body: body,
+    headers: {
+      Authorization: `Basic ${btoa(`${CLIENT_ID}:${CLIENT_SECRET}`)}`,
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
   });
 
   const response = await fetch(request);
+
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+  const access_data = await response.json();
+  sessionStorage.setItem("access_token", access_data?.access_token);
+  sessionStorage.setItem("access_data", JSON.stringify(access_data));
+
+  return true;
 };
