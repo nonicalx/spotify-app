@@ -1,3 +1,3 @@
 export const isAuthenticated = () => {
-  return localStorage.getItem("isAuthorized") || false;
+  return sessionStorage.getItem("access_token") ? true : false;
 };
