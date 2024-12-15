@@ -12,6 +12,9 @@ export default function Nav() {
     if (!isAuthenticated()) {
       navigate("/auth");
     }
+    if (isAuthenticated() && location.pathname === "/auth") {
+      navigate(-1);
+    }
   }, [location.pathname]);
 
   return (
