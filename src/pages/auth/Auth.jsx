@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { authorize, getAccessToken } from "./utils";
 import { useNavigate, useSearchParams } from "react-router-dom";
+import "./auth.css";
 
 export default function Auth() {
   let [searchParams] = useSearchParams();
@@ -24,9 +25,11 @@ export default function Auth() {
   };
 
   return (
-    <div>
-      <p>Click button to Authorize Spotify</p>
-      <button onClick={handleAuthorization}>Authorize</button>
+    <div className="container">
+      <h1>Welcome to Spotify Charts</h1>
+      <button className="primary-btn" onClick={handleAuthorization}>
+        Authorize Spotify Account
+      </button>
     </div>
   );
 }
