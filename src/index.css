@@ -21,6 +21,10 @@
 a {
   font-weight: 500;
   text-decoration: inherit;
+  color: var(--primary-text-color);
+}
+a:hover {
+  color: var(--primary-link-active-color);
 }
 
 button {
@@ -31,4 +35,14 @@ button {
   font-weight: 500;
   font-family: inherit;
   cursor: pointer;
+  transition: all 0.25s;
+}
+
+button:hover {
+  transform: scale(1.05, 1.05);
+}
+
+.primary-btn {
+  background-color: var(--primary-button-bg-color);
+  color: var(--primary-button-text-color);
 }
