@@ -17,5 +17,5 @@ export default function PageLoader({ children }) {
     setTimeout(() => setIsLoading(false), 500);
   }, [location.pathname]);
 
-  return <div>{isLoading ? "Loading..." : children}</div>;
+  return <main>{isLoading ? "Loading..." : children}</main>;
 }
