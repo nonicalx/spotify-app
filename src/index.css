@@ -46,3 +46,7 @@ button:hover {
   background-color: var(--primary-button-bg-color);
   color: var(--primary-button-text-color);
 }
+
+main {
+  padding: 1rem;
+}
