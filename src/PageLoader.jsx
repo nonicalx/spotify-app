@@ -8,10 +8,10 @@ export default function PageLoader({ children }) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    if (!isAuthenticated()) {
-      navigate("/auth");
+    if (!isAuthenticated() && location.pathname !== "/") {
+      navigate("/");
     }
-    if (isAuthenticated() && location.pathname === "/auth") {
+    if (isAuthenticated() && location.pathname === "/") {
       navigate(-1);
     }
     setTimeout(() => setIsLoading(false), 500);
