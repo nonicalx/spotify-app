@@ -34,8 +34,9 @@ export const getAccessToken = async (code) => {
     throw new Error(`HTTP error! status: ${response.status}`);
   }
   const access_data = await response.json();
-  sessionStorage.setItem("access_token", access_data?.access_token);
-  sessionStorage.setItem("access_data", JSON.stringify(access_data));
-
+  sessionStorage.setItem(
+    "access_data",
+    JSON.stringify({ ...access_data, accessed_time: new Date().getTime() })
+  );
   return true;
 };
