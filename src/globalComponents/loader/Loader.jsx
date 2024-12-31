@@ -1,4 +1,4 @@
-import "./Loader.scoped.css";
+import "./Loader.css";
 
 function Loader() {
   return (

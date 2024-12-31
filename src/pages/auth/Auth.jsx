@@ -1,14 +1,17 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { authorize, getAccessToken } from "./utils";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import "./auth.css";
+import Loader from "../../globalComponents/loader/Loader";
 
 export default function Auth() {
   let [searchParams] = useSearchParams();
   let navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (searchParams.get("code")) {
+      setLoading(true);
       getAccessToken(searchParams.get("code")).then((accessTokenGotten) => {
         if (accessTokenGotten) {
           navigate("/top-songs");
@@ -17,6 +20,7 @@ export default function Auth() {
         }
       });
     }
+    setLoading(false);
   });
 
   const handleAuthorization = (e) => {
@@ -26,10 +30,16 @@ export default function Auth() {
 
   return (
     <div className="container">
-      <h1>Welcome to Spotify Charts</h1>
-      <button className="primary-btn" onClick={handleAuthorization}>
-        Authorize Spotify Account
-      </button>
+      {loading ? (
+        <Loader />
+      ) : (
+        <>
+          <h1>Welcome to Spotify Charts</h1>
+          <button className="primary-btn" onClick={handleAuthorization}>
+            Authorize Spotify Account
+          </button>
+        </>
+      )}
     </div>
   );
 }
