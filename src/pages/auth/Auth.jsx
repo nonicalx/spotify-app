@@ -7,7 +7,7 @@ import Loader from "../../globalComponents/loader/Loader";
 export default function Auth() {
   let [searchParams] = useSearchParams();
   let navigate = useNavigate();
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (searchParams.get("code")) {
@@ -20,7 +20,7 @@ export default function Auth() {
         }
       });
     }
-    setLoading(false);
+    setTimeout(() => setLoading(false), 1500);
   });
 
   const handleAuthorization = (e) => {
