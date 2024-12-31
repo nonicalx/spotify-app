@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { isAuthenticated } from "./utils.js";
+import Loader from "./globalComponents/loader/Loader.jsx";
 
 export default function PageLoader({ children }) {
   const navigate = useNavigate();
@@ -17,5 +18,5 @@ export default function PageLoader({ children }) {
     setTimeout(() => setIsLoading(false), 500);
   }, [location.pathname]);
 
-  return <main>{isLoading ? "Loading..." : children}</main>;
+  return <main>{isLoading ? <Loader /> : children}</main>;
 }
