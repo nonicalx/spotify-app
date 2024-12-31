@@ -1,7 +1,13 @@
-import React from "react";
+import "./Loader.scoped.css";
 
 function Loader() {
-  return <div>Loading...</div>;
+  return (
+    <div className="loader">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  );
 }
 
 export default Loader;
