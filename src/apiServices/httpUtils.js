@@ -17,3 +17,5 @@ async function getData(url) {
     showErrorMessage(error.message);
   }
 }
+
+export const http = { getData };
