@@ -6,7 +6,7 @@ import { showErrorMessage } from "./notifications";
  * Contains utility functions for making GET, POST, PATCH and DELETE request.
  */
 
-async function getDataFromAPI(url) {
+async function getData(url) {
   try {
     const response = await fetch(url);
     if (!response.ok) {
