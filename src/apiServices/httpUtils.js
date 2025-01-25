@@ -7,8 +7,24 @@ import { showErrorMessage } from "./notifications";
  */
 
 async function getData(url) {
-  try {
+  tryCatch(async () => {
     const response = await fetch(url);
+    return generateResponse(response);
+  });
+}
+
+async function postData(url, body) {
+  tryCatch(async () => {
+    const response = await fetch(url, {
+      method: "POST",
+      body: JSON.stringify(body),
+    });
+    return generateResponse(response);
+  });
+}
+
+export const http = { getData, postData };
+
 /**
  * utils functions to the main functions of this module
  */
