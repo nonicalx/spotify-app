@@ -9,13 +9,21 @@ import { showErrorMessage } from "./notifications";
 async function getData(url) {
   try {
     const response = await fetch(url);
-    if (!response.ok) {
-      throw new Error(`Responded with error status: ${response.status}`);
-    }
-    return await response.json();
+/**
+ * utils functions to the main functions of this module
+ */
+
+async function tryCatch(fxn) {
+  try {
+    return await fxn();
   } catch (error) {
     showErrorMessage(error.message);
   }
 }
 
-export const http = { getData };
+async function generateResponse(response) {
+  if (!response.ok) {
+    throw new Error(`Responded with error status: ${response.status}`);
+  }
+  return await response.json();
+}
