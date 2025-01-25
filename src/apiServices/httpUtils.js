@@ -12,6 +12,7 @@ async function getDataFromAPI(url) {
     if (!response.ok) {
       throw new Error(`Responded with error status: ${response.status}`);
     }
+    return await response.json();
   } catch (error) {
     showErrorMessage(error.message);
   }
