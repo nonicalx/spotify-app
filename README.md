@@ -1,3 +1,3 @@
 # Spotify Chart
 
-A simple spotify app to get virtual data of top songs, top artist and top albums
+A spotify app to get virtual representation of your spotify data.
